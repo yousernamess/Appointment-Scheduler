@@ -1,18 +1,11 @@
 const request = require("supertest");
 const app = require("../server");
-const mongoose = require("mongoose");
 
-let testEmail = "";   // will hold dynamic email
+let testEmail = "";
 
 describe("Auth API Tests", () => {
 
-  // Close DB connection after all tests
-  afterAll(async () => {
-    await mongoose.connection.close();
-  });
-
   test("Register a new user", async () => {
-    // Create unique email every test run
     testEmail = `test${Date.now()}@example.com`;
 
     const res = await request(app)
@@ -34,6 +27,8 @@ describe("Auth API Tests", () => {
         email: testEmail,
         password: "123456"
       });
+
+    console.log("LOGIN RESPONSE:", res.body); // 👈 ADD THIS
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveProperty("token");

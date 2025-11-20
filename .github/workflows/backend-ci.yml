@@ -2,42 +2,31 @@ name: Backend CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
-  test-backend:
-    name: Run Backend Tests
+  test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: appointment-backend
+
     steps:
-      # Step 1 — Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2 — Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
-      # Step 3 — Install backend dependencies
-      - name: Install backend dependencies
-        run: |
-          cd appointment-backend
-          npm install
+      - name: Install dependencies
+        run: npm install
 
-      # Step 4 — Create .env file for test
-      - name: Create .env file
-        run: |
-          cd appointment-backend
-          echo "MONGO_URI=mongodb+srv://test:test@cluster0.mongodb.net/testdb?retryWrites=true&w=majority" >> .env
-          echo "JWT_SECRET=supersecretjwtkey" >> .env
-          echo "PORT=4000" >> .env
-
-      # Step 5 — Run backend tests
-      - name: Run backend tests
-        run: |
-          cd appointment-backend
-          npm test
+      - name: Run tests
+        env:
+          NODE_ENV: test
+        run: npm test

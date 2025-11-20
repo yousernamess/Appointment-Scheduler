@@ -5,7 +5,6 @@ const connectDB = require("./db");
 
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
@@ -14,19 +13,22 @@ app.get("/", (req, res) => {
   res.send("Backend is running 👍");
 });
 
-// Route files (we will create them soon)
+// Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/appointments", require("./routes/appointments"));
 
 const PORT = process.env.PORT || 4000;
 
-connectDB();
-
+/**
+ * 🛑 IMPORTANT: Do NOT connect to real MongoDB during tests.
+ * Jest automatically sets NODE_ENV="test"
+ */
 if (process.env.NODE_ENV !== "test") {
+  connectDB();
+
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 }
 
 module.exports = app;
-
