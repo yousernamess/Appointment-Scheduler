@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./appointment-backend   # ← CORRECT PATH
+        working-directory: ./appointment-backend
 
     steps:
       - name: Checkout repository
@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: "18"
           cache: 'npm'
+          cache-dependency-path: ./appointment-backend/package-lock.json
 
       - name: Install dependencies
         run: npm ci
