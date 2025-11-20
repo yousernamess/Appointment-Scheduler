@@ -10,10 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./appointment-backend
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,14 +18,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: 'npm'
-          cache-dependency-path: ./appointment-backend/package-lock.json
+          cache: npm
+          cache-dependency-path: appointment-backend/package-lock.json
 
-      - name: Install dependencies
+      - name: Install backend dependencies
+        working-directory: appointment-backend
         run: npm ci
 
-      - name: Run tests
+      - name: Run backend tests
+        working-directory: appointment-backend
         env:
           NODE_ENV: test
-          JWT_SECRET: "dummy_secret_for_ci"
+          JWT_SECRET: dummy_secret_for_ci
         run: npm test
