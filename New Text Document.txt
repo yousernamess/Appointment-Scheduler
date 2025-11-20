@@ -1,0 +1,166 @@
+Microsoft Windows [Version 10.0.26200.7171]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git add .
+warning: in the working copy of 'appointment-backend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: adding embedded git repository: appointment-frontend
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> appointment-frontend
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached appointment-frontend
+hint:
+hint: See "git help submodule" for more information.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>cd appointment-frontend
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontendcrm -rf .git  # On macOS/Linux/Git Bash
+'crm' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontend
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontendc
+'c' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontend
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontendrd /s /q .git
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontenddir /A
+ Volume in drive C has no label.
+ Volume Serial Number is 72FF-898D
+
+ Directory of C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontend
+
+20-11-2025  11:52    <DIR>          .
+20-11-2025  11:37    <DIR>          ..
+20-11-2025  11:47               357 .gitignore
+20-11-2025  01:02           657,895 package-lock.json
+20-11-2025  01:02               919 package.json
+20-11-2025  01:01    <DIR>          public
+20-11-2025  01:00             3,359 README.md
+20-11-2025  02:39    <DIR>          src
+               4 File(s)        662,530 bytes
+               4 Dir(s)   6,530,342,912 bytes free
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontendcd .git
+The system cannot find the path specified.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern\appointment-frontendcd ..
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git rm --cached appointment-frontend
+error: the following file has staged content different from both the
+file and the HEAD:
+    appointment-frontend
+(use -f to force removal)
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>-f
+'-f' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git rm --cached -f appointment-frontend
+rm 'appointment-frontend'
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git add .
+warning: in the working copy of 'appointment-frontend/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/index.js', LF will be replaced by CRLF the next time Git touches it
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git reset
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        appointment-backend/
+        appointment-frontend/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git add .
+warning: in the working copy of 'appointment-backend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'appointment-frontend/src/index.js', LF will be replaced by CRLF the next time Git touches it
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git commit -m "Core Appointment Scheduler"
+[main (root-commit) e76c115] Core Appointment Scheduler
+ 30 files changed, 970 insertions(+)
+ create mode 100644 appointment-backend/.gitignore
+ create mode 100644 appointment-backend/controllers/appointmentController.js
+ create mode 100644 appointment-backend/controllers/authController.js
+ create mode 100644 appointment-backend/db.js
+ create mode 100644 appointment-backend/middleware/authMiddleware.js
+ create mode 100644 appointment-backend/models/appointment.js
+ create mode 100644 appointment-backend/models/user.js
+ create mode 100644 appointment-backend/package.json
+ create mode 100644 appointment-backend/routes/appointments.js
+ create mode 100644 appointment-backend/routes/auth.js
+ create mode 100644 appointment-backend/server.js
+ create mode 100644 appointment-frontend/.gitignore
+ create mode 100644 appointment-frontend/README.md
+ create mode 100644 appointment-frontend/package.json
+ create mode 100644 appointment-frontend/public/favicon.ico
+ create mode 100644 appointment-frontend/public/index.html
+ create mode 100644 appointment-frontend/public/logo192.png
+ create mode 100644 appointment-frontend/public/logo512.png
+ create mode 100644 appointment-frontend/public/manifest.json
+ create mode 100644 appointment-frontend/public/robots.txt
+ create mode 100644 appointment-frontend/src/App.css
+ create mode 100644 appointment-frontend/src/App.js
+ create mode 100644 appointment-frontend/src/index.css
+ create mode 100644 appointment-frontend/src/index.js
+ create mode 100644 appointment-frontend/src/pages/BookAppointment.js
+ create mode 100644 appointment-frontend/src/pages/Dashboard.js
+ create mode 100644 appointment-frontend/src/pages/Login.js
+ create mode 100644 appointment-frontend/src/pages/Register.js
+ create mode 100644 appointment-frontend/src/services/api.js
+ create mode 100644 appointment-frontend/src/styles.css
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git push -u origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git branch -M main
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git remote add origin https://github.com/yousernamess/Appointment-Scheduler.git
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>git push -u origin main
+Enumerating objects: 42, done.
+Counting objects: 100% (42/42), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (42/42), 29.42 KiB | 5.88 MiB/s, done.
+Total 42 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/yousernamess/Appointment-Scheduler.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\HP\Documents\SEM-7\appointment_scheduler_mern>

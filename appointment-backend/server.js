@@ -20,8 +20,13 @@ app.use("/api/appointments", require("./routes/appointments"));
 
 const PORT = process.env.PORT || 4000;
 
-connectDB().then(() => {
+connectDB();
+
+if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
-});
+}
+
+module.exports = app;
+
